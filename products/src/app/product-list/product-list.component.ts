@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { products } from '../products';
 
 @Component({
@@ -6,7 +6,7 @@ import { products } from '../products';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, OnChanges {
   products = products;
 
   share() {
@@ -17,9 +17,20 @@ export class ProductListComponent implements OnInit {
     window.alert('You will be notified when the product goes on sale')
   }
 
-  constructor() { }
+  constructor() {
+    console.log('====================================');
+    console.log('constructor');
+    console.log('====================================');
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+      
+  }
 
   ngOnInit(): void {
+    console.log('====================================');
+    console.log('ngOnInit');
+    console.log('====================================');
   }
 
 }
