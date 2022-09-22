@@ -24,13 +24,15 @@ export class ProductListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-      
+
   }
 
   ngOnInit(): void {
     console.log('====================================');
     console.log('ngOnInit');
     console.log('====================================');
+    console.log(this.products);
+
   }
 
 }
